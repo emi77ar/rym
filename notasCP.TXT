@@ -1,0 +1,38 @@
+hacemos el server. 
+luego hacemos un index js, 
+que va a tener importado e instanciado a esxpress,
+tambien va a tener sus middlewares.
+en la istancia de express le hago el metodo use, y traigo a el archivo en el que voya crear mis rutas
+las rutas van a hacerse con .get, .post, ...etc
+en una ruta que viaja info por query, hay dos casos.
+voya tener que hacer los controladores, en una carpeta controllers.
+el controladro se va a encargar de la logica, y la ruta se enargara de la respuesta.
+en las rutas puede venir info por body o por query, voy atener que destructurar.
+de la ruuta le paso los mismos parametros al controlador que voy a ahcer.
+en las rutas por body voy a ejeutar los controladore,  voy a hacer instancias de los controladores,
+e el caso de un body, voy a tener un try catch para manejar los errores.
+si te pide arrojar un error , voy a usar try catch, y sino voy a return un objeto ccon una propiedad error
+
+
+carpetas: src-routes-index.js aca en index.js va express, y los middlewares, por cada path que quiera utilizar.
+src-routes-userRouter : voya teener los .get, .put, .poost.
+src-routes-posteosRouter: voy a tener los .get, o .put para la ruta /posteos que especifique en el middleware.
+
+const posteosRouter = require("express").Router(); nos trae el router desde expresss.
+
+defino las rutas:
+
+posteosRouter.post('/', (req,res)=>{
+
+})  
+debo exportar como module.exports = posteosRouter.
+y lo voy a requerir en los middleware, indx.js
+    const posteosRouter = require(/rutaDelArchivo)
+
+los controladores los va a consummir el posteosRouter. deberia hacer un archivo porc cada controlador.
+el controlador va a tener la llogica para hacer un post, la informacion la va a tener la ruta.
+al metodo post lo tngo que hacer con body, es la unica forma de requerir la info.
+    const {userId, title, contents} = req.body-
+
+
+
